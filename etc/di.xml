@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+
+   <type name="M2M\Logger\Logger\Handler">
+       <arguments>
+           <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+       </arguments>
+   </type>
+
+   <type name="M2M\Logger\Logger\Logger">
+       <arguments>
+           <argument name="name" xsi:type="string">M2M_Custom_Log</argument>
+           <argument name="handlers"  xsi:type="array">
+               <item name="system" xsi:type="object">M2M\Logger\Logger\Handler</item>
+           </argument>
+       </arguments>
+   </type>
+
+</config>
+<!-- di.xml - Konfiguracja zależności innych klas -->
